@@ -1,0 +1,6 @@
+.bg-img{
+    background-image: url('../../../images/more/3.png');
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+}
