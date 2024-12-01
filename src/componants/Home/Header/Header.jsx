@@ -1,13 +1,14 @@
 import React from 'react';
 
 import logo from '../../../images/more/logo1.png'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './header.css'
 
 const Header = () => {
     const links = <div className='text-2xl lg:space-x-5 flex lg:flex-row flex-col '>
         <NavLink to="/">Home</NavLink>
                         <NavLink to="/addProducts">Add products</NavLink>
+                        <NavLink to="/signupusers">Users</NavLink>
         </div>
     
     const logos = <>
@@ -17,6 +18,8 @@ const Header = () => {
 
                     </div>
     </>
+
+    const signUp = <Link to="/signup" className="text-xl border p-1">Sign Up</Link>
     
     return (
         <div className='bg-[#331A15]'>
@@ -41,6 +44,7 @@ const Header = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content  rounded-lg z-[1] mt-3 w-52 p-2 shadow bg-[#331A15] space-y-2 border">
                             {links}
+                            {signUp}
                         </ul>
                     </div>
                     {logos}
@@ -52,9 +56,9 @@ const Header = () => {
                        }
                     </ul>
                 </div>
-                {/* <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div> */}
+                <div className="">
+                    {signUp}
+                </div>
             </div>
 
             {/* <div className='text-white bg-[#331A15] py-2 space-x-2 flex justify-between items-center'>
