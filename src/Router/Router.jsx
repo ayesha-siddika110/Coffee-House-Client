@@ -6,6 +6,7 @@ import AddProduct from '../componants/AddProduct/AddProduct';
 import UpdateProducts from '../componants/UpdateProducts/UpdateProducts';
 import SignUp from '../componants/SignUp/SignUp';
 import Users from '../componants/Users/Users';
+import Login from '../componants/Login/Login';
 
 const Router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const Router = createBrowserRouter([
                 path: "/signupusers",
                 element: <Users></Users>,
                 loader: ()=> fetch('http://localhost:5000/users')
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
             }
         ]
     }

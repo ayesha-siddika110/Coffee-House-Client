@@ -3,12 +3,12 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const Login = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const {LoginUser} = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const handleSignUp =(e)=>{
+    const handleLogin =(e)=>{
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
@@ -17,7 +17,7 @@ const SignUp = () => {
         console.log(signUpvalues);
 
 
-        createUser(email,password)
+        LoginUser(email,password)
         .then(res=>{
             console.log(res.user);
 
@@ -32,10 +32,10 @@ const SignUp = () => {
             .then(res=>res.json())
             .then(data=>{
                 console.log(data);
-                if(data.insertedId){
-                    toast.success('You are sign in our website')
+               
+                toast.success('Successfully login')
                     
-                }
+                
                 form.reset()
                 navigate("/")
                 
@@ -54,7 +54,7 @@ const SignUp = () => {
                 <div className="">
                     
                     <div className="card bg-base-100   shrink-0 shadow-2xl">
-                        <form onSubmit={handleSignUp} className="card-body text-lg">
+                        <form onSubmit={handleLogin} className="card-body text-lg">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="">Email</span>
@@ -72,9 +72,9 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-[#270b0b] text-white">Sign Up</button>
+                                <button className="btn bg-[#270b0b] text-white">Login</button>
                             </div>
-                            <p>Already have and account ? <Link to="/login" className="text-blue-800 text-2xl font-semibold" >Login</Link></p>
+                            <p>New to Coffee House ? please <Link to="/login" className="text-blue-800 text-2xl font-semibold" >Login</Link></p>
                         </form>
                     </div>
                 </div>
@@ -83,4 +83,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Login;
