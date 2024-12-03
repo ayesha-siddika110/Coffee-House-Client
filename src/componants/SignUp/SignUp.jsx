@@ -21,7 +21,7 @@ const SignUp = () => {
         .then(res=>{
             console.log(res.user);
 
-            fetch('http://localhost:5000/users',{
+            fetch('https://coffee-house-server-three.vercel.app/users',{
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

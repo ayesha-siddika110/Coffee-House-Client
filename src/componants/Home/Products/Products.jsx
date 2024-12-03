@@ -34,7 +34,7 @@ const Products = () => {
 
 
 
-                    fetch(`http://localhost:5000/coffess/${_id}`, {
+                    fetch(`https://coffee-house-server-three.vercel.app/coffess/${_id}`, {
                         method: 'DELETE'
                     })
                     .then(res => res.json())

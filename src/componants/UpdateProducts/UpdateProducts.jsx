@@ -27,7 +27,7 @@ const UpdateProducts = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-                fetch(`http://localhost:5000/coffess/${data._id}`, {
+                fetch(`https://coffee-house-server-three.vercel.app/coffess/${data._id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
